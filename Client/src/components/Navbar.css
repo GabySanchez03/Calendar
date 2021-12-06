@@ -6,7 +6,21 @@
     align-items: center;
   }
   
-  .menu-bars {
+  .center {
+flex: 60%;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+padding-right: 40%;
+padding-top: 1%;
+  }
+  .center input{
+height: 20px;
+width: 400px;
+  }
+
+  
+ .menu-bars {
     margin-left: 2rem;
     font-size: 2rem;
     background: none;
@@ -66,6 +80,8 @@
     justify-content: start;
     align-items: center;
   }
+  .
+
   
   span {
     margin-left: 16px;
