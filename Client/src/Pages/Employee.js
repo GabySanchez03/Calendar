@@ -1,33 +1,33 @@
+
 import React from 'react';
 
-function App() {
-  return (
-    
-          <div class="divTable">
-             <div class="headRow">
-                <div class="divCell" align="center">Customer ID</div>
-                <div  class="divCell">Customer Name</div>
-                <div  class="divCell">Customer Address</div>
-             </div>
-            <div class="divRow">
-                  <div class="divCell">001</div>
-                <div class="divCell">002</div>
-                <div class="divCell">003</div>
-            </div>
-            <div class="divRow">
-                <div class="divCell">xxx</div>
-                <div class="divCell">yyy</div>
-                <div class="divCell">www</div>
-           </div>
-            <div class="divRow">
-                <div class="divCell">ttt</div>
-                <div class="divCell">uuu</div>
-                <div class="divCell">Mkkk</div>
-           </div>
-
-      </div>
-    
-  );
+let id = 0;
+function createData(option, type) {
+  id += 1;
+  return { id, option, type };
 }
 
-export default App;
+let rows = [
+  createData('Setting One', 'Private'),
+  createData('Setting Two', 'Public'),
+  createData('Setting Three', 'Group'),
+  createData('Setting Four', 'Private'),
+];
+
+export default class MyTable extends React.Component {
+
+
+  render() {
+    return(
+      <table>
+      {rows.map(row => (
+        <tr key={row.id}>
+          <td>{row.option}</td>
+          <td>{row.type}</td>
+        </tr>
+      ))}
+      </table>
+    )
+  }
+
+}
